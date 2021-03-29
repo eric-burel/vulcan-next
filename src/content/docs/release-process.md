@@ -10,11 +10,17 @@ git checkout devel && git pull
 # git checkout -b release/<next-version>
 git merge master # get hot fixes if any
 git merge devel
-rm -Rf node_modules && yarn install # no missing module surprise
+rm -Rf node_modules
+yarn install # no missing module surprise
+yarn upgrade # update versions to latest Vulcan NPM release
 
 ```
 
 ## Run the app, run tests
+
+```sh
+yarn run typecheck
+```
 
 ```sh
 # Run mongo in a separate shell

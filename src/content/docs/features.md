@@ -131,6 +131,10 @@ In `next.config.js`, you'll find a demonstration of how to **safely** inject inf
 
 For example, we use it to inject current version into the `html` tag for better deployment tracking.
 
+### Sitemap.xml and Robots.txt with next-sitemap
+
+We use [next-sitemap](https://github.com/iamvishnusankar/next-sitemap#readme) to create both the `robots.txt` and `sitemap.xml` in the `postbuild` script.  Change `https://vulcan.next` to your root url in `/vulcan-next-sitemap.js`.  Here's more [configuration options](https://github.com/iamvishnusankar/next-sitemap#configuration-options). 
+
 ### Performance debugging
 
 [See official doc](https://nextjs.org/docs/advanced-features/measuring-performance).
@@ -174,7 +178,7 @@ Get started by reading [MDXJS official doc](https://mdxjs.com/). If you want to 
 
 ### Next-mdx-enhanced
 
-Thanks to [next-mdx-enhanced](https://github.com/hashicorp/next-mdx-enhanced), you can easily use markdown files as your CMS.
+Thanks to [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote), you can easily use markdown files as your CMS.
 Check the `/docs` page when running the app to see the live documentation.
 
 ### MD and MDX import in React
@@ -243,7 +247,7 @@ This folder is ignored when running `yarn run test:unit`, to avoid bloating your
 
 We strive to unify testing patterns between Cypress and Jest where it makes sense.
 
-First, add [React Testing queries into Cypress](https://github.com/testing-library/cypress-testing-library), so you can fetch elements with similar patterns. Check [React Testing docs for example of the reverse approach ](https://testing-library.com/docs/react-testing-library/setup#add-custom-queries) (data-cy in React Testing).
+First, add [React Testing queries into Cypress](https://github.com/testing-library/cypress-testing-library), so you can fetch elements with similar patterns. Check [React Testing docs for example of the reverse approach](https://testing-library.com/docs/react-testing-library/setup#add-custom-queries) (data-cy in React Testing).
 
 ### Unified test coverage
 
@@ -273,7 +277,7 @@ Storybook is aware of the `public` folder, so it will display images accordingly
 
 We reuse the same i18n config as in the app, so your stories will be internationalized automatically.
 
-### Webpack bundle analyzer
+### Webpack bundle analyzer for storybook
 
 There is nothing worse than a slow Storybook build, you can debug your Webpack bundle using `yarn run analyze-bundle:storybook`
 

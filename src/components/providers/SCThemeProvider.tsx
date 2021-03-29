@@ -16,7 +16,10 @@ const useSCTheme = (): UseSCThemeOutput => {
   return [muiTheme, setSCTheme];
 };
 
-const SCThemeContext = createContext<UseSCThemeOutput>(undefined);
+const SCThemeContext = createContext<UseSCThemeOutput>([
+  defaultTheme,
+  () => {},
+]);
 
 /**
  * Can be called anywhere, will provide current theme
